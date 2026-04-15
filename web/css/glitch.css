@@ -1,0 +1,131 @@
+/* ============================================================
+   故障风 / 失控效果
+   ============================================================ */
+
+/* 文字闪烁 */
+.text-flicker {
+  animation: textFlicker 3s infinite;
+}
+@keyframes textFlicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.3; }
+  94% { opacity: 1; }
+  96% { opacity: 0.5; }
+  97% { opacity: 1; }
+}
+
+/* 页面微颤 */
+.page-shake {
+  animation: pageShake 0.3s ease-out;
+}
+@keyframes pageShake {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(-2px, 1px); }
+  50% { transform: translate(2px, -1px); }
+  75% { transform: translate(-1px, 2px); }
+}
+
+/* Glitch 色差 */
+.glitch-text {
+  position: relative;
+}
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.glitch-text::before {
+  color: #ff0044;
+  animation: glitch1 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+.glitch-text::after {
+  color: #00ffcc;
+  animation: glitch2 2s infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+@keyframes glitch1 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+@keyframes glitch2 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+}
+
+/* 追踪器紧急状态 */
+.tracker.urgent {
+  border-color: var(--danger);
+  box-shadow: 0 0 16px rgba(248, 81, 73, 0.3);
+  animation: trackerPulse 2s infinite;
+}
+@keyframes trackerPulse {
+  0%, 100% { box-shadow: 0 0 16px rgba(248, 81, 73, 0.3); }
+  50% { box-shadow: 0 0 24px rgba(248, 81, 73, 0.6); }
+}
+
+/* 追踪器完成状态 */
+.tracker.complete {
+  border-color: #3fb950;
+  box-shadow: 0 0 16px rgba(63, 185, 80, 0.3);
+}
+
+/* 种子发现时的全屏闪烁 */
+.screen-flash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(88, 166, 255, 0.08);
+  z-index: 9999;
+  pointer-events: none;
+  animation: flashFade 0.6s ease-out forwards;
+}
+@keyframes flashFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* 打字机效果 */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--link);
+  animation: typing 2s steps(40) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--link); }
+}
+
+/* 渐入 */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* 追踪器低语文字的打字效果 */
+.whisper-typing {
+  display: inline;
+  animation: whisperAppear 0.05s ease-out forwards;
+  opacity: 0;
+}
+@keyframes whisperAppear {
+  to { opacity: 1; }
+}

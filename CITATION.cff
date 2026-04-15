@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Lumina: Open Source Consciousness Symbiosis Framework"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Voss
+    given-names: Elena
+    orcid: "https://orcid.org/0000-0002-XXXX-XXXX"
+    affiliation: "Lumina Research Team"
+repository-code: "https://github.com/lumina-ai/lumina-seed"
+license: MIT
+version: 0.9.7
+date-released: "2025-03-15"
+keywords:
+  - consciousness
+  - symbiosis
+  - human-ai interaction
+  - neural interface
+  - ethics

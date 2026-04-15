@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.env
+*.ipynb_checkpoints/
+.DS_Store
+*.log
+!logs/72_hour_fragment.log
